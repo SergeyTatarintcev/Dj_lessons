@@ -1,9 +1,10 @@
-
+# zerocod/main/urls.py
 from django.urls import path
 from . import views
 
-urlpatterns = [
+app_name = 'main'
 
-    path('', views.index),
-    path('new', views.new)
+urlpatterns = [
+    path('',     views.index, name='index'),
+    path('new/', views.new,   name='new'),
 ]
