@@ -1,0 +1,15 @@
+{# zerocod/main/templates/main/footer.html #}
+{% load static %}
+
+  <footer class="bg-light py-4">
+  <div class="container d-flex justify-content-around">
+    <a href="{% url 'main:about' %}"   class="text-decoration-none">О нас</a>
+    <a href="{% url 'main:contacts' %}"class="text-decoration-none">Контакты</a>
+    <a href="{% url 'main:team' %}"    class="text-decoration-none">Наша команда</a>
+    <a href="{% url 'main:jobs' %}"    class="text-decoration-none">Вакансия</a>
+    <a href="{% url 'main:faq' %}"     class="text-decoration-none">Вопрос–Ответ</a>
+  </div>
+  <div class="text-center text-muted mt-3">
+    © 2025 CapyDjango
+  </div>
+</footer>

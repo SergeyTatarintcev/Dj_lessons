@@ -1,24 +1,34 @@
 {# zerocod/main/templates/main/nav.html #}
 {% load static %}
-<aside class="d-flex flex-column bg-light border-end vh-100 p-3 sidebar">
+<aside class="bg-light border-end border-2 p-3" style="width: 200px; min-height: 10%;">
   <!-- Лого + название -->
-  <div class="d-flex align-items-center mb-4">
+  <div class="d-flex flex-column align-items-center mb-4">
     <img
       src="{% static 'main/img/capy.png' %}"
       alt="капибара"
-      width="50"
-      class="rounded-circle me-2">
-    <span class="h5 mb-0">CapyDjango</span>
+      width="150"
+      class="rounded-circle">
+
+    <span class="h5 mb-0">Capy Django</span>
   </div>
-  <!-- Меню -->
-  <nav class="nav nav-pills flex-column">
-    <a class="nav-link {% if request.resolver_match.url_name == 'index' %}active{% endif %}"
-       href="{% url 'main:index' %}">
+
+  <!-- Меню кнопками -->
+  <nav class="d-grid gap-2">
+    <a
+      href="{% url 'main:home' %}"
+      class="btn {% if request.resolver_match.url_name == 'home' %}btn-primary{% else %}btn-secondary{% endif %}"
+      role="button"
+    >
       Главная
     </a>
-    <a class="nav-link {% if request.resolver_match.url_name == 'new' %}active{% endif %}"
-       href="{% url 'main:new' %}">
-      Вторая страница
+
+    {# Среда обитания #}
+    <a
+      href="{% url 'main:page2' %}"
+      class="btn {% if request.resolver_match.url_name == 'page2' %}btn-primary{% else %}btn-secondary{% endif %}"
+      role="button"
+    >
+      Среда обитания
     </a>
   </nav>
 </aside>

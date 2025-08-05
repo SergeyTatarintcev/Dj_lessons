@@ -3,55 +3,28 @@
 <html lang="ru">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport"
-        content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{% block title %}CapyDjango{% endblock %}</title>
-
-  <!-- Bootstrap CSS -->
   <link
     href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
-    rel="stylesheet"
-    integrity="sha384-LtrjvnR4/JLh03JQ1mLgI2M2ntz7X8e3Hj6XceTbwEmZJQGwYhOgLLp5HbS4+7HN"
-    crossorigin="anonymous">
-
-  <!-- Кастомные стили -->
-  <link rel="stylesheet" href="{% static 'main/css/main.css' %}">
+    rel="stylesheet" crossorigin="anonymous">
 </head>
 <body>
 
-  <div class="app-container">
-    <!-- Sidebar -->
-    <aside class="sidebar">
-      <div class="logo">
-        <img src="{% static 'main/img/capy.png' %}" alt="капибара">
-        <h4>CapyDjango</h4>
-      </div>
-      <ul class="nav nav-pills flex-column mb-4">
-        <p class="nav-item">
-          <a class="nav-link {% if request.resolver_match.url_name == 'index' %}active{% endif %}"
-             href="{% url 'main:index' %}">Главная</a>
-        </p>
-        <p class="nav-item">
-          <a class="nav-link {% if request.resolver_match.url_name == 'new' %}active{% endif %}"
-             href="{% url 'main:new' %}">Среда обитания</a>
-        </p>
-      </ul>
-      <div class="mt-auto text-center text-muted">
-        © 2025
-      </div>
-    </aside>
-
-    <!-- Main content -->
-    <main class="main-content">
+  <body class="d-flex flex-column" style="min-height: 100vh;">
+  {# Верхняя часть: навигация + контент #}
+  <div class="d-flex flex-fill">
+    {% include "main/nav.html" %}
+    <main class="flex-fill p-4">
       {% block content %}{% endblock %}
     </main>
   </div>
 
-  <!-- Bootstrap JS Bundle -->
+  {# Футер «прилипнет» к низу, если контента мало #}
+  {% include 'main/footer.html' %}
+
   <script
     src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-ENjdO4Dr2bkBIFxQpeoA6rT/Kh7P4IU9RvWjJ+EQ5lI5m1o5jM8QBlhXQG8E1CjE"
-    crossorigin="anonymous">
-  </script>
+    crossorigin="anonymous"></script>
 </body>
 </html>

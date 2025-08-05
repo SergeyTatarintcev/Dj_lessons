@@ -1,0 +1,19 @@
+{# zerocod/main/templates/main/team.html #}
+
+{% extends 'main/layout.html' %}
+{% load static %}
+
+{% block title %}Наша команда — CapyDjango{% endblock %}
+
+{% block content %}
+<div class="container py-5 text-center">
+  <h1>Наша команда</h1>
+  <p>Слон, бегемот и капибара</p>
+  <img src="{% static 'main/img/team.jpg' %}"
+       alt="Слон, бегемот и капибара"
+       width="450"
+       class="img-fluid rounded shadow">
+
+
+</div>
+{% endblock %}
