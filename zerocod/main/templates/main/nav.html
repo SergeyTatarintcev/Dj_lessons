@@ -30,5 +30,12 @@
     >
       Среда обитания
     </a>
+    <a
+      href="{% url 'news:news_home' %}"
+      class="btn {% if request.resolver_match.url_name == 'news_home' %}btn-primary{% else %}btn-secondary{% endif %}"
+      role="button"
+    >
+      Новости
+    </a>
   </nav>
 </aside>
