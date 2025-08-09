@@ -9,7 +9,7 @@ class News_post(models.Model):
     class Meta:
         verbose_name = 'Новость'
         verbose_name_plural = 'Новости'
-        ordering = ['-created_at']
+        ordering = ['-pub_date']
 
     def __str__(self):
-        return self.title
+        return self.title  # <-- берёт текст из поля "Название новости"
