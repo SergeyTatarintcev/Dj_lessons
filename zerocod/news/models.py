@@ -1,10 +1,14 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 class News_post(models.Model):
     title = models.CharField(max_length=200, verbose_name='Название новости')
     short_description = models.CharField(max_length=200, verbose_name='Краткое описание')
     text = models.TextField(verbose_name='Новость')
     pub_date = models.DateTimeField(auto_now_add=True, verbose_name='Дата публикации')
+
+    author = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, blank=True, verbose_name='Автор', related_name='news_posts')
+
 
     class Meta:
         verbose_name = 'Новость'
