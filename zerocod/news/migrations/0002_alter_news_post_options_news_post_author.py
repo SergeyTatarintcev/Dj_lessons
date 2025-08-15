@@ -15,7 +15,7 @@ class Migration(migrations.Migration):
     operations = [
         migrations.AlterModelOptions(
             name='news_post',
-            options={'ordering': ['-pub_date'], 'verbose_name': 'Новость', 'verbose_name_plural': 'Новости'},
+            options={'ordering': ['-date'], 'verbose_name': 'Новость', 'verbose_name_plural': 'Новости'},
         ),
         migrations.AddField(
             model_name='news_post',

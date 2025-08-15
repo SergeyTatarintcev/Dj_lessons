@@ -9,7 +9,7 @@
   - Базовый макет `layout.html` + общие фрагменты `nav.html`, `footer.html`.
   - Подключён Bootstrap (CDN) и собственные стили `main/static/main/css/main.css`.
 - **Приложение `news`:**
-  - Модель `News_post` с полями: `title`, `short_description`, `text`, `pub_date`, `author` (*ForeignKey → User*).
+  - Модель `News_post` с полями: `title`, `short_description`, `text`, `date`, `author` (*ForeignKey → User*).
   - Сортировка по дате публикации (новые сверху).
   - Админка: список с колонками **Название / Автор / Дата**, фильтры и поиск.
   - AppConfig с русским именем раздела: **«Новости»** в сайдбаре админки.

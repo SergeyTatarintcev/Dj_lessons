@@ -37,5 +37,13 @@
     >
       Новости
     </a>
+    <a
+      href="{% url 'news:add_news' %}"
+      class="btn {% if request.resolver_match.url_name == 'add_news' %}btn-primary{% else %}btn-secondary{% endif %}"
+      role="button"
+    >
+      Добавить новость
+    </a>
   </nav>
 </aside>
+

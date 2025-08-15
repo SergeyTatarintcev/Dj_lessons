@@ -1,0 +1,16 @@
+{% extends 'main/layout.html' %}
+{% block title %}Добавить новость{% endblock %}
+
+{% block content %}
+<h1>Добавить новость</h1>
+
+{% if not request.user.is_authenticated %}
+  <p>Нужно <a href="{% url 'login' %}?next={% url 'news:add_news' %}">войти</a>, чтобы добавить новость.</p>
+{% else %}
+  <form method="post" class="form">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Сохранить</button>
+  </form>
+{% endif %}
+{% endblock %}

@@ -3,14 +3,14 @@
 {% block title %}Новостная лента{% endblock %}
 
 {% block content %}
-  <h1>Добро пожаловать на сайт {{ caption }}</h1>
-  <h2>Читайте новости</h2>
+  
+  <h2>Наши новости</h2>
 
   <style>
     .news-list { display: grid; gap: 16px; }
     .news-card {
       border: 1px solid #e5e7eb; border-radius: 12px; padding: 16px;
-      background: #fff; box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+      background: hsl(0, 0%, 100%); box-shadow: 0 1px 4px rgba(0,0,0,0.05);
     }
     .news-title { margin: 0 0 8px; }
     .news-meta { color:#6b7280; font-size: 0.9rem; margin-bottom: 8px; }
@@ -23,7 +23,7 @@
         <article class="news-card">
           <h3 class="news-title">{{ n.title }}</h3>
           <div class="news-meta">
-            {{ n.pub_date|date:"d.m.Y H:i" }}
+            {{ n.date|date:"d.m.Y H:i" }}
             {% if n.author %} • Автор: {{ n.author.username }}{% endif %}
           </div>
           <p class="news-text">{{ n.short_description }}</p>

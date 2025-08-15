@@ -18,7 +18,7 @@ class Migration(migrations.Migration):
                 ('title', models.CharField(max_length=200, verbose_name='Название новости')),
                 ('short_description', models.CharField(max_length=200, verbose_name='Краткое описание')),
                 ('text', models.TextField(verbose_name='Новость')),
-                ('pub_date', models.DateTimeField(auto_now_add=True, verbose_name='Дата публикации')),
+                ('date', models.DateTimeField(auto_now_add=True, verbose_name='Дата публикации')),
             ],
         ),
     ]

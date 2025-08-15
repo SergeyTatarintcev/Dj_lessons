@@ -1,11 +1,12 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.utils import timezone
 
 class News_post(models.Model):
     title = models.CharField(max_length=200, verbose_name='Название новости')
     short_description = models.CharField(max_length=200, verbose_name='Краткое описание')
     text = models.TextField(verbose_name='Новость')
-    pub_date = models.DateTimeField(auto_now_add=True, verbose_name='Дата публикации')
+    date = models.DateTimeField(default=timezone.now, verbose_name='Дата публикации')
 
     author = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, blank=True, verbose_name='Автор', related_name='news_posts')
 
@@ -13,7 +14,7 @@ class News_post(models.Model):
     class Meta:
         verbose_name = 'Новость'
         verbose_name_plural = 'Новости'
-        ordering = ['-pub_date']
+        ordering = ['-date']
 
     def __str__(self):
         return self.title  # <-- берёт текст из поля "Название новости"
